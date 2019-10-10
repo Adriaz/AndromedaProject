@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"></meta>
+    <title>EIB Concierge</title>
+    <link href="botchat.css" rel="stylesheet" />
+    <script src="botchat_IE.js"></script>
+    <style>
+        #mychat {
+            margin: 10px;
+            position: fixed;
+            bottom: 1px;
+            right: 1px;
+            z-index: 1000000;
+        }
+    </style>
+</head>
+<Style>
+    body{
+        background-color: rgb(127, 152, 161);
+    }
+</Style>
+<body>
+    <div id="container">
+        <img id="mychat" src="EIB_Chaticon_002.png" style="float:right", height=85px, width=85px />
+    </div>
+    <div id="webchat" role="main"></div>
+
+</body>
+</html>
+<script>
+    (function () {
+        var div = document.createElement("div");
+        document.getElementsByTagName('body')[0].appendChild(div);
+        div.outerHTML = "<div id='botDiv' style='width: 400px; height: 0px; margin:10px; position: fixed; bottom: 0; right:0; z-index: 1000;><div  id='botTitleBar' style='height: 40px; width: 400px; position:fixed; cursor: pointer;'></div></div>";
+        BotChat.App({
+            directLine: { secret: 'vNnIQf2jxWU.ftdtK6GlMeRP_CKegt7DcLastpLPurAWXh3hBBZGi64' },
+            user: { id: 'You' },
+            bot: { id: '8619fe4e-ec40-4853-91d9-d833c7355830' },
+            chatTitle: "Chatbot Eiffel",
+        }, document.getElementById("botDiv"));
+
+        document.getElementsByClassName("wc-header")[0].setAttribute("id", "chatbotheader");
+        document.querySelector('body').addEventListener('click', function (e) {
+            e.target.matches = e.target.matches || e.target.msMatchesSelector;
+            if (e.target.matches('#chatbotheader')) {
+                var botDiv = document.querySelector('#botDiv');
+
+                botDiv.style.height = "0px";
+                botDiv.style.border = "none";
+
+                document.getElementById("mychat").style.display = "block";
+            };
+        });
+
+        document.getElementById("mychat").addEventListener("click", function (e) {
+
+            document.getElementById("botDiv").style.height = '600px';
+            document.getElementById("botDiv").style.border = 'double';
+            document.getElementById("botDiv").style.backgroundColor = 'White';
+    
+            e.target.style.display = "none";
+        })
+    }());
+</script>
