@@ -23,7 +23,7 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
     visibility: hidden; }
   
   .wc-header {
-    background-color: #ED1B2E;
+    background-color: #07C5A1;
     box-shadow: 0 1px rgba(0, 0, 0, 0.2);
     box-sizing: content-box;
     color: #ffffff;
@@ -388,11 +388,11 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
     text-align: right; }
   
   .wc-message-from-me .wc-message-content {
-    background-color: #B30838;
+    background-color: #008167;
     color: #ffffff; }
   
   .wc-message-from-me svg.wc-message-callout path {
-    fill: #B30838; }
+    fill: #008167; }
   
   .wc-message-from-me svg.wc-message-callout path.point-left {
     display: none; }
